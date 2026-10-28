@@ -12,4 +12,4 @@ import Payment from './pages/Payment';
 import { CartProvider } from './context/CartContext';
 function ScrollToTop() { const { pathname } = useLocation(); useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [pathname]); return null; }
 function Layout() { return <><ScrollToTop/><Navbar/><Routes><Route path="/" element={<Home/>}/><Route path="/menu" element={<MenuPage/>}/><Route path="/checkout" element={<Checkout/>}/><Route path="/order-confirmation" element={<OrderConfirmation/>}/><Route path="/payment" element={<Payment/>}/><Route path="*" element={<Home/>}/></Routes><Footer/><CartDrawer/><CartBar/></>; }
-export default function App() { return <BrowserRouter><CartProvider><Layout/></CartProvider></BrowserRouter>; }
+export default function App() { return <BrowserRouter basename={import.meta.env.BASE_URL}><CartProvider><Layout/></CartProvider></BrowserRouter>; }
