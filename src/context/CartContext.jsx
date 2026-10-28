@@ -29,7 +29,7 @@ export function CartProvider({ children }) {
   };
   const setQty = (key, qty) => setQuantities(old => {
     const next = { ...old };
-    if (qty <= 0) delete next[id]; else next[id] = qty;
+    if (qty <= 0) delete next[key]; else next[key] = qty;
     return next;
   });
   const remove = id => setQty(id, 0);
