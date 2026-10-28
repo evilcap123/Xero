@@ -1,0 +1,2 @@
+import { Minus, Plus } from 'lucide-react';
+export default function QuantityStepper({ quantity, onChange, compact = false }) { return <div className={`stepper ${compact ? 'stepper-compact' : ''}`} aria-label="Quantity controls"><button aria-label="Decrease quantity" onClick={() => onChange(quantity - 1)}><Minus size={14}/></button><span>{quantity}</span><button aria-label="Increase quantity" onClick={() => onChange(quantity + 1)}><Plus size={14}/></button></div>; }
